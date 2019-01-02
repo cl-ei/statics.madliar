@@ -17,7 +17,7 @@ $(function(){
     if (!window.CDN_URL){window.CDN_URL = ""};
     var pauseImgPos = window.CDN_URL + "/static/music/player/pause.png",
         playImgPos = window.CDN_URL + "/static/music/player/play.png",
-        musicFileFolder = window.CDN_URL + "/music_file/",
+        musicFileFolder = window.CDN_URL + "/music/",
         hxjjImgLocation = "url('"+ window.CDN_URL + "/static/music/friend_link/hxjj.jpg')";
 
     function setCookie(cname, cvalue, exdays) {
