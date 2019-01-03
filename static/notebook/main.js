@@ -1,10 +1,11 @@
 $.cl = {
+    CDN_URL: window.CDN_URL || "",
     jstreeTypes: {
-        bin: {icon: "/static/img/jstree/bin.png"},
-        text: {icon: "/static/img/jstree/file.png"},
-        md: {icon: "/static/img/jstree/file.png"},
-        folder: {icon: "/static/img/jstree/folder.png"},
-        default: {icon: "/static/img/jstree/folder.png"}
+        bin: {icon: cl.CDN_URL + "/static/img/jstree/bin.png"},
+        text: {icon: cl.CDN_URL + "/static/img/jstree/file.png"},
+        md: {icon: cl.CDN_URL + "/static/img/jstree/file.png"},
+        folder: {icon: cl.CDN_URL + "/static/img/jstree/folder.png"},
+        default: {icon: cl.CDN_URL + "/static/img/jstree/folder.png"}
     },
     setCookie: function (key, value, expiredays){
         var exdate=new Date();
