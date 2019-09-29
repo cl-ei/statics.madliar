@@ -451,7 +451,15 @@ $.cl = {
             "open": {
                 "label": "打开",
                 "action": function () {
-                    if(node.type === "text" || node.type === "md"){
+                    if(
+                        node.type === "text"
+                        || node.type === "md"
+                        || node.type.toLowerCase() === "png"
+                        || node.type.toLowerCase() === "jpg"
+                        || node.type.toLowerCase() === "jpeg"
+                        || node.type.toLowerCase() === "gif"
+                        || node.type.toLowerCase() === "bmp"
+                    ){
                         $.cl.openFile(selectedNodeId);
                     }else{
                         $.cl.popupConfirm("不支持打开二进制文件。", null, false)
