@@ -387,6 +387,12 @@ $.cl = {
             $.cl.renderCurrentEditDocumentTitle();
             if (data.bin === true){
                 console.log("open Bin file: ", data);
+                var new_url = window.location.protocol + "//" + window.location.host + "/notebook/" + data.key;
+                document.getElementById('input-text-area').value = [
+                    "<img src=\"",
+                    new_url,
+                    "\" style=\"width:100%\">"
+                ].join("");
             }else{
                 document.getElementById('input-text-area').value = data.content;
             }
@@ -612,6 +618,12 @@ $.cl = {
         if (!(window.contextData.loginInfo && window.contextData.loginInfo.email)){
             $.cl.popupMessage("请登录。");
             return ;
+        }
+
+        var nodeType = $("#jstree").jstree().get_node(localStorage.currentDocument).type;
+        if (["md", "text"].indexOf(nodeType) < 0){
+            console.log("Do not edit bin file.");
+            return;
         }
 
         var content = $("#input-text-area").val();
