@@ -1,6 +1,7 @@
 $.cl = {
     jstreeTypes: {
         bin: {icon: (window.CDN_URL || "") + "/static/img/jstree/bin.png"},
+        img: {icon: (window.CDN_URL || "") + "/static/img/jstree/img.png"},
         text: {icon: (window.CDN_URL || "") + "/static/img/jstree/file.png"},
         md: {icon: (window.CDN_URL || "") + "/static/img/jstree/file.png"},
         folder: {icon: (window.CDN_URL || "") + "/static/img/jstree/folder.png"},
@@ -530,7 +531,7 @@ $.cl = {
                 $.cl.openFile(localStorage.currentDocument);
             }
         }).on("select_node.jstree", function (e, node){
-            if (["text", "md", "bin"].indexOf(node.node.type) < 0) return;
+            if (["text", "md", "img"].indexOf(node.node.type) < 0) return;
             var selectedNodeId = node.node.id;
             if (localStorage.currentDocument !== selectedNodeId){
                 $.cl.openFile(selectedNodeId);
