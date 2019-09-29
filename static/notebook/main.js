@@ -383,10 +383,13 @@ $.cl = {
                 $.cl.popupMessage(msg);
                 return ;
             }
-            var content = data.content;
             localStorage.currentDocument = data.path;
             $.cl.renderCurrentEditDocumentTitle();
-            document.getElementById('input-text-area').value = content;
+            if (data.bin === true){
+                console.log("open Bin file: ", data);
+            }else{
+                document.getElementById('input-text-area').value = data.content;
+            }
         };
         var onOpenFileFailed = function (e){
             $.cl.onOpenFile = false;
