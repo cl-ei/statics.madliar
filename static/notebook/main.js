@@ -530,8 +530,7 @@ $.cl = {
                 $.cl.openFile(localStorage.currentDocument);
             }
         }).on("select_node.jstree", function (e, node){
-            var nodeType = node.node.type.toLowerCase();
-            if (["text", "md", "png", "gif", "jpg", "jpeg"].indexOf(nodeType) < 0) return;
+            if (["text", "md", "bin"].indexOf(node.node.type) < 0) return;
             var selectedNodeId = node.node.id;
             if (localStorage.currentDocument !== selectedNodeId){
                 $.cl.openFile(selectedNodeId);
