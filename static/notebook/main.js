@@ -622,7 +622,6 @@ $.cl = {
 
         var nodeType = $("#jstree").jstree().get_node(localStorage.currentDocument).type;
         if (["md", "text"].indexOf(nodeType) < 0){
-            console.log("Do not edit bin file.");
             return;
         }
 
@@ -716,8 +715,8 @@ $.cl = {
         }
 
         var filesize = Math.floor((fileList[0].size)/1024);
-        if(filesize > 4096){
-            $.cl.popupConfirm("上传的文件大小不能超过4MB。", null, false, "文件大小超过限制");
+        if(filesize > 1024*200){
+            $.cl.popupConfirm("上传的文件大小不能超过200MB。", null, false, "文件大小超过限制");
             return false;
         }
 
